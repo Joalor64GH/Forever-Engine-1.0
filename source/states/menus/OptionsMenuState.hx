@@ -69,11 +69,6 @@ class OptionsMenuState extends MusicBeatState
 					['Disable Reset Button', getFromOption],
 					['Ghost Tapping', getFromOption],
 					['', null],
-					['Text Settings', null],
-					['', null],
-					['Display Accuracy', getFromOption],
-					['Skip Text', getFromOption],
-					['', null],
 					['Meta Settings', null],
 					['', null],
 					['Auto Pause', getFromOption],
@@ -85,21 +80,13 @@ class OptionsMenuState extends MusicBeatState
 			],
 			'appearance' => [
 				[
-					['Judgements', null],
-					['', null],
-					["UI Skin", getFromOption],
-					['Fixed Judgements', getFromOption],
-					['Simply Judgements', getFromOption],
-					['Counter', getFromOption],
-					['', null],
-					['Notes', null],
-					['', null],
-					["Note Skin", getFromOption],
-					["Clip Style", getFromOption],
+					['User Interface', null],
+					['Display Accuracy', getFromOption],
 					['No Camera Note Movement', getFromOption],
 					['Disable Note Splashes', getFromOption],
 					['Opaque Arrows', getFromOption],
 					['Opaque Holds', getFromOption],
+					['Counter', getFromOption],
 					['', null],
 					['Accessibility Settings', null],
 					['', null],
@@ -393,7 +380,7 @@ class OptionsMenuState extends MusicBeatState
 						extrasMap.set(letter, checkmark);
 					case Init.SettingTypes.Selector:
 						// selector
-						var selector:Selector = new Selector(10, letter.y, letter.text, Init.gameSettings.get(letter.text)[4],
+						var selector:Selector = new Selector(10, letter.y, letter, Init.gameSettings.get(letter.text)[4],
 							(letter.text == 'Framerate Cap') ? true : false, false);
 
 						extrasMap.set(letter, selector);
